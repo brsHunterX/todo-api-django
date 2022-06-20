@@ -12,7 +12,7 @@ A ToDo API created in Python and Django Rest Framework for case study.
 First create a venv
 
 ```bash
-cd todo-api-django && python -m venv ./venv
+cd todo-api-django && python3 -m venv ./venv
 ```
 
 Enable venv in your terminal
