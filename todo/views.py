@@ -1,11 +1,11 @@
 from django.contrib.auth.models import User
 
-from rest_framework import viewsets, generics
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BasicAuthentication
 
 from todo.models import Task
-from todo.serializers import UserSerializer, TaskSerializer, UserTasksSerializer
+from todo.serializers import UserSerializer, TaskSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -22,11 +22,11 @@ class TaskViewSet(viewsets.ModelViewSet):
     authentication_classes = [BasicAuthentication]
 
 
-class UserTasksViewSet(generics.ListAPIView):
-    serializer_class = UserTasksSerializer
-    permission_classes = [IsAuthenticated]
-    authentication_classes = [BasicAuthentication]
+# class UserTasksViewSet(generics.ListAPIView):
+#     serializer_class = UserTasksSerializer
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [BasicAuthentication]
 
-    def get_queryset(self):
-        queryset = Task.objects.filter(user=self.kwargs["id"])
-        return queryset
+#     def get_queryset(self):
+#         queryset = Task.objects.filter(user=self.kwargs["id"])
+#         return queryset

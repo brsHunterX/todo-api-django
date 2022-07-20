@@ -9,5 +9,3 @@ class Task(models.Model):
     title = models.CharField(max_length=255, null=False)
     body = models.TextField(null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-

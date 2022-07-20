@@ -24,17 +24,17 @@ source venv/bin/activate
 Install requirements
 
 ```bash
-pip install -r requirements.txt
+poetry install
 ```
 
 Run project migrations
 
 ```bash
-python manage.py migrations
+poetry run python manage.py migrations
 ```
 
 Launch project
 
 ```bash
-python manage.py runserver
+poetry run python manage.py runserver
 ```
